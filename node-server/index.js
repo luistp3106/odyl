@@ -38,8 +38,8 @@ app.use('/api', authentication.realAuthentication(), secured.router); // Esta va
 
 app.set('port', port);
 
-const server = https.createServer(options, app);
-// const server = http.createServer(app);
+// const server = https.createServer(options, app);
+const server = http.createServer(app);
 
 server.listen(port, () => {
     console.log('Up and Running');
