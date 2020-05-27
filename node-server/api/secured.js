@@ -28,6 +28,21 @@ router.post("/deleteCita", async (req, res) => {
     }
 });
 
+router.post("/editCita", async (req, res) => {
+    try {
+        let {id, start, end, token} = req.body;
+        if (logic.compare(id) && logic.compare(start) && logic.compare(end) && logic.compare(token)){
+            await models.cita.update({fecha_inicio: start, fecha_fin: end},{where:{id}});
+            res.json({status: true, token: logic.resetTimeUser(token)});
+        }
+        else res.json({status: false, message: 'Parámetros incorrectos'});
+    }
+    catch (e) {
+        console.log(e);
+        res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
+    }
+});
+
 module.exports = {
     router: router,
     func: function (io1) {

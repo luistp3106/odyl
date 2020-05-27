@@ -41,7 +41,7 @@ function ajax(method, url, data){
     return new Promise(function (resolve) {
         try {
             let xhr = new XMLHttpRequest();
-            xhr.open(method, url, true);
+            xhr.open(method, `${location.protocol}//${location.hostname}:3030${url}`, true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
                 try {
@@ -66,7 +66,7 @@ function ajax2(method, url, data) {
     return new Promise(function (resolve) {
         $.ajax ({
             type: method,
-            url,
+            url: `${location.protocol}//${location.hostname}:3030${url}`,
             dataType: "json",
             contentType: "application/json",
             data: JSON.stringify(data),

@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         fecha_fin:{
             allowNull: false,
             type: DataTypes.DATE
+        },
+        tipo_cita:{
+            allowNull: false,
+            type: DataTypes.STRING
         }
     },{
         freezeTableName: true,
