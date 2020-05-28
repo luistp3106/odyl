@@ -13,7 +13,7 @@ const cors = require('cors');
 
 const compression = require('compression');
 const cacheController = require('express-cache-controller');
-const port = 3030;
+const port = 3031;
 
 const controller = require('./api/controller');
 const secured = require('./api/secured');
