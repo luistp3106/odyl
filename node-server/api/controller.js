@@ -13,8 +13,8 @@ const transporter = nodemailer.createTransport({
 });
 let mailOptions = {
     from: 'Odyls Collection ans Salon <odylscollection@gmail.com>',
-    // to: 'odylscollection@gmail.com, luistp3101@gmail.com,alejandratrinidad@live.com',
-    to: 'edison22_1997@live.com',
+    to: 'odylscollection@gmail.com, luistp3101@gmail.com,alejandratrinidad@live.com',
+    // to: 'edison22_1997@live.com',
     subject: '',
     html: ''
 };
@@ -77,7 +77,6 @@ router.post("/manageFormulario", async (req, res) => {
                       E-mail: <b>${form.email.toLowerCase()}<br></b>
                       Teléfono: <b>${form.telefono.toLowerCase()}<br></b>
                       Fecha y hora de la cita: <b>${form.fechaEnString}<br></b>
-                      Modalidad: <b>${form.modalidad}<br></b>
                     `;
 
             transporter.sendMail(m, async function (error, info) {
