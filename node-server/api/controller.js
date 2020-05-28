@@ -135,24 +135,24 @@ try {
                 password: '45e02403632cab7cb2658f9984c9a7c6:f41f5de189589c7437680c01dd1236e6b59c4f520c0ef46132b0db1a8d821dd5'
             });
         }
-        count = await models.usuario.count({where: {nombre_usuario: 'karina'}});
+        count = await models.usuario.count({where: {nombre_usuario: 'luis'}});
         if (count === 0) {
             await models.usuario.create({
-                nombre: 'Karina',
-                apellido: '',
-                nombre_usuario: 'karina',
-                email: 'nutkarina@gmail.com',
-                password: 'bbaa96133937c741e25ff13a217a9e1c:d010ba274cec7de21daa61fc77c17831'
+                nombre: 'Luis',
+                apellido: 'Trinidad',
+                nombre_usuario: 'luis',
+                email: 'doesntmatter@prueba.com',
+                password: 'b1663c90335d3667d702b695b4cca944:dc1b7a0514a4cd476f2e851ded8ddcfc6688c05f1f1eafc8bcc32a8c2c1b0669'
             });
         }
-        count = await models.usuario.count({where: {nombre_usuario: 'h-alvarez'}});
+        count = await models.usuario.count({where: {nombre_usuario: 'alejandra'}});
         if (count === 0) {
             await models.usuario.create({
-                nombre: 'heidi',
-                apellido: '',
-                nombre_usuario: 'h-alvarez',
+                nombre: 'Alejandra',
+                apellido: 'Trinidad',
+                nombre_usuario: 'alejandra',
                 email: 'noimporta@prueba.com',
-                password: '170153a587ee545e08b13acbd4e7238f:5b846d060a10b5b994e96cad01f4ff29'
+                password: 'c9c89d2d43a48a0bbbda6e2de4447998:be8bb1136ddefad59906107162e7af9a'
             });
         }
     })();
