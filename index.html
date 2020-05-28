@@ -411,11 +411,28 @@
                                 <input class="input--style-1" id="nombre" type="text" placeholder="Nombre Completo"
                                        name="Nombre Completo">
                             </div>
-                            <div class="input-group">
-                                <input class="input--style-1" id="servicio" type="text"
-                                       placeholder="Servicio a Realizarse"
-                                       name="Servicio a Realizarse">
-                            </div>
+
+                          <div class="col-2">
+                              <div class="selection">
+
+                                          <select class="mdb-select md-form" size="2" multiple id="area" name="Área de Servicio"
+                                                  style="margin-left: -15px;">
+                                      <option selected="selected" value="">Área de Servicio</option>
+                                      <option value="Área de Cabello">Área de Cabello</option>
+                                      <option value="Área de Uñas">Área de Uñas</option>
+                                      <option value="Técnicas de Colores">Técnicas de Colores</option>
+                                  </select>
+                                  <div class="select-dropdown"></div>
+                              </div>
+                          </div>
+                        </br>
+                        </br>
+                        <div class="input-group">
+                            <input class="input--style-1" id="servicio" type="text"
+                                   placeholder="Servicio a Realizarse"
+                                   name="Servicio a Realizarse">
+                        </div>
+
                             <div class="col-2">
                                 <div class="selection">
                                     <select class="browser-default custom-select" id="modalidad" name="Modalidad"
@@ -427,22 +444,7 @@
                                     <div class="select-dropdown"></div>
                                 </div>
                             </div>
-                            </br>
-                            </br>
-                            <div class="col-2">
-                                <div class="selection">
-                                    <select class="browser-default custom-select" id="area" name="Área de Servicio"
-                                            style="margin-left: -15px;">
-                                        <option selected="selected" value="">Área de Servicio</option>
-                                        <option value="Área de Cabello">Área de Cabello</option>
-                                        <option value="Área de Uñas">Área de Uñas</option>
-                                        <option value="Técnicas de Colores">Técnicas de Colores</option>
-                                    </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
-                            </div>
-                            </br>
-                            </br>
+                        
                             <div class="input-group" style="margin-top: 35px;">
                                 <input class="input--style-1" id="email" type="email" name="Correo Electrónico"
                                        placeholder="Correo Electrónico">
@@ -588,7 +590,7 @@
                     alert("La fecha de la cita no puede ser menor que la fecha actual");
                     return;
                 }
-              
+
                 let r = await ajax2('POST', `/api/manageFormulario`, {form: obj});
                 if (r === null) {
                     alert("Ha ocurrido un error en el proceso");
