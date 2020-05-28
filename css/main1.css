@@ -212,18 +212,18 @@ h6 {
 }
 
 .btn--green {
-  background: #57b846;
+  background: #DAE6E1;
 }
 
 .btn--green:hover {
-  background: #4dae3c;
+  background: #000;
 }
 
 /* ==========================================================================
    #DATE PICKER
    ========================================================================== */
 td.active {
-  background-color: #2c6ed5;
+  background-color: #DAE6E1;
 }
 
 input[type="date" i] {
@@ -285,7 +285,7 @@ input {
 }
 
 .input-group {
- 
+
   margin-bottom: 30px;
   border-bottom: 2px solid #ccc;
 }
@@ -307,7 +307,7 @@ input {
 .input--style-1 {
   padding: 9px 0;
   color: #666;
-  
+
 }
 
 .input--style-1::-webkit-input-placeholder {
