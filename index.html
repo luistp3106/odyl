@@ -573,6 +573,7 @@
                     telefono: $("#telefono").val(),
                     date: generateDate()
                 };
+                obj.fechaEnString = formatCompleteDate(obj.date);
                 let minutesInDay = 60 * obj.date.getHours() + obj.date.getMinutes();
 
                 if (obj.date.getTime() < new Date().getTime()) {

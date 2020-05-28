@@ -10,6 +10,21 @@ function showFaltante(missing) {
     alert(str);
 }
 
+function getHourAndMeridian(date) {
+    if (date.getHours() >= 1 && date.getHours() <= 11) return {hora: date.getHours(), meridiano: 'AM'};
+    if (date.getHours() >= 13 && date.getHours() <= 23) return {hora: date.getHours()-12, meridiano: 'PM'};
+    if (date.getHours() === 0) return {hora: 12, meridiano:'AM'};
+    return {hora: 12, meridiano: 'PM'}
+}
+
+function formatCompleteDate(date) {
+    return `${("00"+date.getDate()).slice(-2)}/${("00"+(date.getMonth()+1)).slice(-2)}/${date.getFullYear()} ${("00"+getHourAndMeridian(date).hora).slice(-2)}:${("00"+date.getMinutes()).slice(-2)}:${("00"+date.getSeconds()).slice(-2)} ${getHourAndMeridian(date).meridiano}`
+}
+
+function formatDate(date) {
+    return `${("00"+date.getDate()).slice(-2)}/${("00"+(date.getMonth()+1)).slice(-2)}/${date.getFullYear()}`;
+}
+
 function verifyList(list){
     let status = 0, missing = [];
     for(let i of list){
