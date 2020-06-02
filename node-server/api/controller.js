@@ -85,10 +85,36 @@ router.post("/manageFormulario", async (req, res) => {
                     console.log(error);
                     res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
                 } else {
-                    res.json({status: true});
+                    let m = logic.noPointer(mailOptions);
+                    m.subject = `Cita Odyls Collection and Salon - 20% de Descuento`;
+                    m.to = form.email;
+                    m.html = `
+					Gracias por ser Parte de nuestra familia, en Odyl’s estamos comprometidos con el bienestar de tu cabello y tu salud!</br></b></br>
+          Estamos tomando medidas para tu seguridad y la nuestra, al asistir a tu cita es de carácter que uses tu mascarilla, en el local tenemos manitas limpias para tu uso, recuerda esto es una responsabilidad de todos.</br></b></br>
+Para depósitos tenemos las siguientes cuentas:</br></b></br>
+                      <ul>
+                            <li>Banco Popular Dominicano - 801514258</li>
+                            <li>Banreservas – 1202231262</li>
+                            <li>Ambas a nombre de Luis Trinidad</li>
+
+                        </ul>
+                        </br></br>
+                       <p style="align-text:justify"> <strong>Recuerda ser puntual con tu cita, te esperamos gracias por preferirnos </strong></br></b>
+                    </p>		`;
+                    transporter.sendMail(m, async function (error, info) {
+                        if (error) {
+                            res.json({
+                                status: true,
+                                message: `Cita creada exitósamente.${form.modalidad === 'Online' ? `Sin embargo, el correo suministrado es inválido, no recibirá su correo de confirmación` : ''}`
+                            });
+                        } else {
+                            res.json({status: true});
+                        }
+                    });
                 }
             });
-        }
+
+        } else res.json({status: false, message: `Esta cita choca con ${count} cita(s)`});
     } catch (e) {
         console.log(e);
         res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
