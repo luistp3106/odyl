@@ -97,6 +97,9 @@ router.post("/manageFormulario", async (req, res) => {
                             <li>Banreservas – 1202231262</li>
                             <li>Ambas a nombre de Luis Trinidad</li>
                         </ul>
+                        </br>
+                        Nos puedes contactar por <strong>WhatsApp: 809-431-0948 o llamarnos al 829-872-0444</strong>
+
                         </br></br>
                        <p style="align-text:justify"> <strong>Recuerda ser puntual con tu cita, te esperamos. Gracias por preferirnos </strong></br></b>
                     </p>`;
