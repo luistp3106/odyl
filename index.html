@@ -551,12 +551,7 @@
             fechaActual.setMinutes(fechaActual.getMinutes() + new Date().getTimezoneOffset());
             let horaInicial = parseInt(document.getElementById('hour1').value);
             let minutoInicial = parseInt(document.getElementById('hour2').value);
-            let meridianoHora = horaInicial >= 0 && horaInicial <= 11 ? 'am' : 'pm';
-            if (horaInicial === 12 && meridianoHora === 'am') fechaActual.setHours(0);
-            else if (horaInicial === 12 && meridianoHora === 'pm') fechaActual.setHours(12);
-            else fechaActual.setHours(horaInicial + (meridianoHora === 'am' ? 0 : 12));
-            fechaActual.setMinutes(minutoInicial);
-            fechaActual.setSeconds(0);
+            fechaActual.setHours(horaInicial, minutoInicial, 0, 0);
             return fechaActual;
         } catch (e) {
             console.log(e);
