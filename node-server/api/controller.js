@@ -86,11 +86,15 @@ router.post("/manageFormulario", async (req, res) => {
                     res.json({status: false, message: 'Ha ocurrido un error en el proceso'});
                 } else {
                     let m = logic.noPointer(mailOptions);
-                    m.subject = `Cita Odyls Collection and Salon - 20% de Descuento`;
+                    m.subject = `Cita Odyls Collection and Salon`;
                     m.to = form.email;
                     m.html = `
-					Gracias por ser Parte de nuestra familia, en Odyl’s estamos comprometidos con el bienestar de tu cabello y tu salud!</br></b></br>
+				Hola ${form.nombre.toUpperCase()}	Gracias por ser Parte de nuestra familia, en Odyl’s estamos comprometidos con el bienestar de tu cabello y tu salud!</br></b></br>
                     Estamos tomando medidas para tu seguridad y la nuestra. Al asistir a tu cita es de carácter obligatorio que uses mascarilla. En el local, tenemos alcohol en gel para tu uso, recuerda, esto es una responsabilidad de todos.</br></b></br>
+
+                    Recuerda Tu Cita del <b>${form.fechaEnString}<br></b>
+                    Servicios a realizarte: <b>${form.servicio.toUpperCase()}</b><br>
+                    
                     Para depósitos tenemos las siguientes cuentas:</br></b></br>
                       <ul>
                             <li>Banco Popular Dominicano - 801514258</li>
