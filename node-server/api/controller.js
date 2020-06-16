@@ -94,7 +94,7 @@ router.post("/manageFormulario", async (req, res) => {
 
                     Recuerda Tu Cita del <b>${form.fechaEnString}<br></b>
                     Servicios a realizarte: <b>${form.servicio.toUpperCase()}</b><br>
-                    
+
                     Para depósitos tenemos las siguientes cuentas:</br></b></br>
                       <ul>
                             <li>Banco Popular Dominicano - 801514258</li>
